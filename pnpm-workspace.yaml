@@ -3,4 +3,5 @@ packages:
   - 'pages/*'
   # - 'pages/content/*'
   - 'packages/*'
+  - 'servers/*'
   - 'tests/*'
