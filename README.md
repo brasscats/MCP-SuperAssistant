@@ -77,6 +77,7 @@ The Model Context Protocol (MCP) is an open standard developed by Anthropic that
 - **Preferences Persistence**: Remembers sidebar position, size, and settings
 - **Dark/Light Mode Support**: Adapts to the AI platform's theme
 - **React Hooks Integration**: Modern React patterns for state management and plugin interactions
+- **Multi-Project Supabase Support**: Safely switch between dev, stage, prod, and local projects
 
 ## Architecture
 
@@ -243,6 +244,14 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## Supabase Multi-Project Notes
+
+Answers to common questions about multi-project support:
+
+1. **Local URLs** – the wizard accepts `http://localhost:54321` as well as hosted Supabase URLs. Local projects are tagged with `isLocal` to disable prod-only guard rails.
+2. **Branch Mapping** – Git branches map to project aliases by convention (`main → prod`, `develop → stage`). Overrides are possible via a `branchAliasMap` configuration.
+3. **Vault Unlock via SSO** – enterprise users may unlock the secrets vault with `chrome.identity.launchWebAuthFlow()` while still supporting a pass‑phrase fallback.
 
 ## License
 
